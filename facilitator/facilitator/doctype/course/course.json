@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-06 11:17:01.777646",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_rrjx",
+  "client",
+  "course_name",
+  "course_status",
+  "starts_on",
+  "ends_on",
+  "address",
+  "column_break_kixg",
+  "facilitator",
+  "facilitator_email",
+  "event",
+  "company",
+  "language",
+  "amended_from",
+  "section_break_nnar",
+  "get_attendance",
+  "approve",
+  "course_attendance"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_rrjx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "course_name",
+   "fieldtype": "Link",
+   "label": "Course Name",
+   "options": "Item"
+  },
+  {
+   "fieldname": "facilitator_email",
+   "fieldtype": "Data",
+   "label": "Facilitator Email"
+  },
+  {
+   "fieldname": "starts_on",
+   "fieldtype": "Datetime",
+   "label": "Starts on"
+  },
+  {
+   "fieldname": "ends_on",
+   "fieldtype": "Datetime",
+   "label": "Ends on"
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "label": "Event",
+   "options": "Event"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Course",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_kixg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "course_status",
+   "fieldtype": "Link",
+   "label": "Course Status",
+   "options": "Course Status"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company ",
+   "options": "Company"
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Select",
+   "label": "Language",
+   "options": "\nEnglish\nArabic\nUndefined"
+  },
+  {
+   "fieldname": "section_break_nnar",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "course_attendance",
+   "fieldtype": "Table",
+   "label": "Course Attendance",
+   "options": "Course Attendance"
+  },
+  {
+   "fieldname": "get_attendance",
+   "fieldtype": "Button",
+   "label": "Get Attendance"
+  },
+  {
+   "fieldname": "approve",
+   "fieldtype": "Button",
+   "label": "Approve"
+  },
+  {
+   "fieldname": "facilitator",
+   "fieldtype": "Link",
+   "label": "Facilitator",
+   "options": "Facilitator"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-09 10:18:37.375684",
+ "modified_by": "Administrator",
+ "module": "Facilitator",
+ "name": "Course",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

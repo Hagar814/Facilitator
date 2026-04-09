@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:name1",
+ "creation": "2018-01-04 01:33:22.090134",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "email",
+  "phone_number",
+  "section_break_tnluq",
+  "daily_rate",
+  "virtual_session_rate",
+  "coaching_rate",
+  "column_break_qcbuq",
+  "consultancy_rate",
+  "special_rate",
+  "assessment_rate",
+  "column_break_g6bmv",
+  "report_reading_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "daily_rate",
+   "fieldtype": "Data",
+   "label": "Daily Rate"
+  },
+  {
+   "fieldname": "virtual_session_rate",
+   "fieldtype": "Data",
+   "label": "Virtual Session Rate"
+  },
+  {
+   "fieldname": "coaching_rate",
+   "fieldtype": "Data",
+   "label": "Coaching Rate"
+  },
+  {
+   "fieldname": "consultancy_rate",
+   "fieldtype": "Data",
+   "label": "Consultancy Rate"
+  },
+  {
+   "fieldname": "special_rate",
+   "fieldtype": "Data",
+   "label": "Special Rate "
+  },
+  {
+   "fieldname": "assessment_rate",
+   "fieldtype": "Data",
+   "label": "Assessment Rate"
+  },
+  {
+   "fieldname": "report_reading_rate",
+   "fieldtype": "Data",
+   "label": "Report Reading Rate"
+  },
+  {
+   "fieldname": "section_break_tnluq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qcbuq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_g6bmv",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "links": [],
+ "modified": "2024-07-07 11:25:33.491690",
+ "modified_by": "Administrator",
+ "module": "Facilitator",
+ "name": "Facilitator",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Technical Deviation",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "name1",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "name1",
+ "track_changes": 1
+}

@@ -1,0 +1,13 @@
+{
+ "creation": "2026-04-07 16:02:32.695849",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2026-04-07 16:02:32.695849",
+ "modified_by": "Administrator",
+ "module": "Facilitator",
+ "name": "My Course Status",
+ "owner": "Administrator",
+ "source_name": "My Course Status",
+ "timeseries": 0
+}

@@ -1,0 +1,31 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-07-09 16:01:33.743790",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2024-07-09 16:02:17.037042",
+ "modified_by": "Administrator",
+ "module": "Facilitator",
+ "name": "tech",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "",
+ "ref_doctype": "Technical Deviation",
+ "report_name": "tech",
+ "report_script": "",
+ "report_type": "Custom Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Technical Deviation"
+  }
+ ]
+}

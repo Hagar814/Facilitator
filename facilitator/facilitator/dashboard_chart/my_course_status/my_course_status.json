@@ -1,0 +1,38 @@
+{
+ "based_on": "",
+ "chart_name": "My Course Status",
+ "chart_type": "Custom",
+ "creation": "2026-04-07 14:44:41.015183",
+ "currency": "",
+ "custom_options": "{\n  \"type\": \"bar\",\n  \"colors\": [\"#7cd6fd\", \"#743ee2\", \"#5e64ff\", \"#ffa00a\"]\n}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[]",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2026-04-07 16:28:17.107877",
+ "modified_by": "Administrator",
+ "module": "Facilitator",
+ "name": "My Course Status",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "parent_document_type": "",
+ "roles": [
+  {
+   "role": "Course Attendance"
+  }
+ ],
+ "show_values_over_chart": 1,
+ "source": "My Course Status",
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "value_based_on": "",
+ "y_axis": []
+}
