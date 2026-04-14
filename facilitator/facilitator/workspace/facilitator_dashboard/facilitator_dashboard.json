@@ -1,0 +1,103 @@
+{
+ "charts": [
+  {
+   "chart_name": "My Course Status",
+   "label": "Course"
+  }
+ ],
+ "content": "[{\"id\":\"mMZKmj9wtL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Facilitator Dashboard</span>\",\"col\":12}},{\"id\":\"T4jdNXQgEU\",\"type\":\"card\",\"data\":{\"card_name\":\"Course\",\"col\":4}},{\"id\":\"2-_CLr68sJ\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Course\",\"col\":12}},{\"id\":\"cXWYz6QTA2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Attendee\",\"col\":4}},{\"id\":\"AJxPWO1uar\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Courses\",\"col\":4}}]",
+ "creation": "2026-04-09 12:57:08.186043",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "share-people",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Facilitator Dashboard",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Course",
+   "link_count": 0,
+   "link_to": "Event",
+   "link_type": "DocType",
+   "onboard": 0,
+   "only_for": "Egypt",
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Course Attendance",
+   "link_count": 0,
+   "link_to": "Courses Attendance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "only_for": "Egypt",
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Course",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "only_for": "Egypt",
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Course",
+   "link_count": 0,
+   "link_to": "Course",
+   "link_type": "DocType",
+   "onboard": 0,
+   "only_for": "Egypt",
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Course Attendance",
+   "link_count": 0,
+   "link_to": "Courses Attendance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "only_for": "Egypt",
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-04-09 15:55:42.971200",
+ "modified_by": "Administrator",
+ "module": "Facilitator",
+ "name": "Facilitator Dashboard",
+ "number_cards": [
+  {
+   "label": "Attendee",
+   "number_card_name": "Attendee"
+  },
+  {
+   "label": "Courses",
+   "number_card_name": "Course Status"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Course Attendance"
+  }
+ ],
+ "sequence_id": 6.0,
+ "shortcuts": [],
+ "title": "Facilitator Dashboard"
+}

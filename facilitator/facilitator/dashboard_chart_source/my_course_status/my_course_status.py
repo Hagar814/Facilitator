@@ -3,15 +3,12 @@
 # facilitator/facilitator/dashboard_chart_source/my_course_status/my_course_status.py
 import frappe
 
-# facilitator/facilitator/dashboard_chart_source/my_course_status/my_course_status.py
-import frappe
-
 @frappe.whitelist()
 def get_data(chart_name=None, filters=None):
     user = frappe.session.user
     
     # Define the statuses you want to track
-    statuses = ["Postponed", "Canceled", "Confirmed", "Tentative", "Completed"]
+    statuses = ["Postpond", "Canceled", "Confirmed", "Tentative", "Completed"]
     
     # Initialize a dictionary with 0 for every status
     stats_map = {status: 0 for status in statuses}

@@ -23,7 +23,8 @@ current_filter_mode = "default";
     const current_user = frappe.session.user;
             listview.filter_area.add([
                 ['Course', 'facilitator_email', '=', current_user],
-['Course', 'course_status', 'in', ['Tentative', 'Confirmed', 'Postpond', 'Canceled']]  
+['Course', 'course_status', 'in', ['Tentative', 'Confirmed', 'Postpond', 'Canceled']] ,
+['Course', 'rejected', '=', 0]   
           ]);
         }
 listview.page.add_inner_button("Completed", function() {

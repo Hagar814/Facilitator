@@ -2,7 +2,6 @@ frappe.ui.form.on('Course', {
     refresh: function(frm) {
         // Only show for users with a specific role if needed
         if (!frappe.user.has_role('Course Attendance')) return;
-        console.log("Reject");
         // Add custom "Reject" button
         frm.add_custom_button(__('Reject'), function() {
             frappe.prompt(
@@ -25,6 +24,10 @@ frappe.ui.form.on('Course', {
                             rejected_by: rejected_by
                         },
                         callback: function(r) {
+                            frm.set_value('rejected', 1)
+                            frm.set_value('rejection_reason', values.note);
+                            frm.save();
+
                             frappe.show_alert({
                                 message: __("Notification sent for {0}", [frm.doc.name]),
                                 indicator: "orange"

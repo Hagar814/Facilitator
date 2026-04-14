@@ -1,7 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "creation": "2026-04-07 13:58:33.790783",
- "currency": "",
+ "creation": "2026-04-09 12:04:06.606113",
  "docstatus": 0,
  "doctype": "Number Card",
  "document_type": "Course",
@@ -13,7 +12,7 @@
  "is_standard": 1,
  "label": "Course Status",
  "method": "facilitator.custom.python.course.get_course_stats",
- "modified": "2026-04-07 13:58:33.790783",
+ "modified": "2026-04-09 12:04:06.606113",
  "modified_by": "Administrator",
  "module": "Facilitator",
  "name": "Course Status",

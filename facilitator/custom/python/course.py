@@ -262,3 +262,16 @@ def get_course_stats():
         "fieldtype": "Int"
     }
 
+def custom_validate_attendance(doc, method):
+    existing = frappe.db.exists("Courses Attendance", {
+        "email": doc.email,
+        "mobile_number": doc.mobile_number,
+        "attendance_date": doc.attendance_date,
+        "name": ["!=", doc.name]  # exclude current doc
+    })
+
+    if existing:
+        frappe.throw(_("Attendance has been created for the same attendee in the same date."))
+
+
+from frappe.desk.doctype.notification_log.notification_log import enqueue_create_notification

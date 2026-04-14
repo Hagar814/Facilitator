@@ -58,6 +58,7 @@ def create_course_from_event(doc, method):
             course.facilitator_email = facilitator_email
             course.starts_on = doc.starts_on
             course.ends_on = doc.ends_on
+            course.company = doc.company
             course.language = doc.language_1
             course.event = doc.name
 
@@ -76,6 +77,107 @@ def create_course_from_event(doc, method):
             frappe.get_traceback(),
             f"Create Course Failed for Event {doc.name}"
         )
+
+
+def sync_courses_from_event(doc, method):
+    try:
+        # -------------------------
+        # Prepare Data
+        # -------------------------
+        event_facilitators = set()
+        if doc.facilitator:
+            for row in doc.facilitator:
+                if row.facilitator:
+                    event_facilitators.add(row.facilitator)
+
+        existing_courses = frappe.get_all(
+            "Course",
+            filters={"event": doc.name},
+            fields=["name", "facilitator"]
+        )
+
+        existing_map = {c.facilitator: c.name for c in existing_courses}
+
+        # =====================================================
+        # 🟢 CREATE SECTION (new facilitators)
+        # =====================================================
+        new_facilitators = event_facilitators - set(existing_map.keys())
+
+        for facilitator in new_facilitators:
+            facilitator_email = frappe.db.get_value(
+                "Facilitator",
+                facilitator,
+                "email"
+            )
+
+            course = frappe.new_doc("Course")
+
+            course.client = doc.client
+            course.course_name = doc.course_name
+            course.course_status = doc.course_status
+            course.facilitator = facilitator
+            course.facilitator_email = facilitator_email
+            course.starts_on = doc.starts_on
+            course.ends_on = doc.ends_on
+            course.language = doc.language_1
+            course.event = doc.name
+
+            if hasattr(doc, "location"):
+                course.address = doc.location
+
+            course.insert(ignore_permissions=True)
+
+        # =====================================================
+        # 🟡 UPDATE SECTION (existing facilitators)
+        # =====================================================
+        common_facilitators = event_facilitators & set(existing_map.keys())
+
+        for facilitator in common_facilitators:
+            course = frappe.get_doc("Course", existing_map[facilitator])
+
+            facilitator_email = frappe.db.get_value(
+                "Facilitator",
+                facilitator,
+                "email"
+            )
+
+            course.client = doc.client
+            course.course_name = doc.course_name
+            course.course_status = doc.course_status
+            course.starts_on = doc.starts_on
+            course.ends_on = doc.ends_on
+            course.language = doc.language_1
+            course.facilitator_email = facilitator_email
+
+            if hasattr(doc, "location"):
+                course.address = doc.location
+
+            course.save(ignore_permissions=True)
+
+        # =====================================================
+        # 🔴 DELETE SECTION (removed facilitators)
+        # =====================================================
+        removed_facilitators = set(existing_map.keys()) - event_facilitators
+
+        for facilitator in removed_facilitators:
+            frappe.delete_doc("Course", existing_map[facilitator], force=True)
+
+        # -------------------------
+        # Log
+        # -------------------------
+        frappe.logger().info(
+            f"[SYNC] Event {doc.name} | "
+            f"Created: {len(new_facilitators)} | "
+            f"Updated: {len(common_facilitators)} | "
+            f"Deleted: {len(removed_facilitators)}"
+        )
+
+    except Exception:
+        frappe.log_error(
+            frappe.get_traceback(),
+            f"Course Sync Failed for Event {doc.name}"
+        )
+
 # @frappe.whitelist()
 # def update_course_status(event=None):
 #         now = now_datetime()

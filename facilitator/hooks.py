@@ -20,12 +20,13 @@ app_license = "MIT"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/facilitator/css/facilitator.css"
-# web_include_js = "/assets/facilitator/js/facilitator.js"
+#web_include_js = "/assets/facilitator/custom/js/facilitator.js"
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
 app_include_js = [
-    "/assets/facilitator/custom/js/chart_sources.js"
+    "/assets/facilitator/custom/js/chart_sources.js",
+    "/assets/facilitator/custom/js/facilitator.js"
 ]
 #app_include_css = "/assets/facilitator/custom/css/facilitator.css"
 # include js in doctype views
@@ -92,11 +93,15 @@ doc_events = {
         # "onload": "facilitator.custom.python.delivery_note.make_event"
     },
     "Event": {
-         "after_insert": "facilitator.custom.python.event.create_course_from_event"
+         "after_insert": "facilitator.custom.python.event.create_course_from_event",
+        "on_update": "facilitator.custom.python.event.sync_courses_from_event"
         # "validate": "facilitator.custom.python.event.update_course_status",
         # "before_save": "e_invoice.custom.python.sales_invoice.before_save",
         # "onload": "facilitator.custom.python.delivery_note.make_event"
     },
+    "Courses Attendance": {
+        "validate": "facilitator.custom.python.course.custom_validate_attendance"
+    }
     
 }
 fixtures = [
