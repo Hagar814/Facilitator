@@ -1,9 +1,14 @@
 frappe.ui.form.on('Course', {
     refresh: function(frm) {
-        // Only show for users with a specific role if needed
+
+        // Only allow specific role
         if (!frappe.user.has_role('Course Attendance')) return;
-        // Add custom "Reject" button
+
+        // =========================
+        // ❌ REJECT BUTTON
+        // =========================
         frm.add_custom_button(__('Reject'), function() {
+
             frappe.prompt(
                 [
                     {
@@ -14,6 +19,7 @@ frappe.ui.form.on('Course', {
                     }
                 ],
                 function(values) {
+
                     const rejected_by = frappe.session.user_fullname;
 
                     frappe.call({
@@ -24,8 +30,10 @@ frappe.ui.form.on('Course', {
                             rejected_by: rejected_by
                         },
                         callback: function(r) {
-                            frm.set_value('rejected', 1)
+
+                            frm.set_value('rejected', 1);
                             frm.set_value('rejection_reason', values.note);
+
                             frm.save();
 
                             frappe.show_alert({
@@ -39,6 +47,30 @@ frappe.ui.form.on('Course', {
                 __('Send')
             );
         });
+
+        // =========================
+        // ➕ CREATE ATTENDANCE BUTTON
+        // =========================
+        frm.add_custom_button(__('Create Attendance'), function() {
+
+            frappe.new_doc("Courses Attendance", {
+                // ---- from Course ----
+                course_name: frm.doc.course_name,
+                client: frm.doc.client,
+                language: frm.doc.language,
+                facilitator: frm.doc.facilitator,
+                starts_on: frm.doc.starts_on,
+                ends_on: frm.doc.ends_on,
+                event: frm.doc.event,
+                company: frm.doc.company,
+
+                // ---- default values ----
+                attendance_date: frappe.datetime.get_today(),
+                course_attendance_status: "Present"
+            });
+
+        });
+
     },
         get_attendance: function(frm) {
 
@@ -132,4 +164,31 @@ frappe.ui.form.on('Course', {
             });
         });
     }
+});
+frappe.ui.form.on('Course Attendance', {
+
+    note: function(frm, cdt, cdn) {
+
+        let row = locals[cdt][cdn];
+
+        console.log("📝 Note changed in Course Attendance:", row.note);
+
+        if (!row.id) return; // safety check
+
+        // update linked Courses Attendance document
+        frappe.call({
+            method: "frappe.client.set_value",
+            args: {
+                doctype: "Courses Attendance",
+                name: row.id,
+                fieldname: {
+                    note: row.note
+                }
+            },
+            callback: function(r) {
+                console.log("✅ Synced note to Courses Attendance:", r.message);
+            }
+        });
+    }
+
 });

@@ -23,7 +23,7 @@ current_filter_mode = "default";
     const current_user = frappe.session.user;
             listview.filter_area.add([
                 ['Course', 'facilitator_email', '=', current_user],
-['Course', 'course_status', 'in', ['Tentative', 'Confirmed', 'Postpond', 'Canceled']] ,
+['Course', 'course_status', 'in', ['Tentative', 'Confirmed', 'Postpond', 'Canceled']]  ,
 ['Course', 'rejected', '=', 0]   
           ]);
         }
@@ -33,17 +33,27 @@ listview.page.add_inner_button("Completed", function() {
 current_filter_mode = "completed"; 
     listview.filter_area.add([
         ['Course', 'facilitator_email', '=', current_user],
-['Course', 'course_status', 'in', ['Completed']]  
+['Course', 'course_status', 'in', ['Completed']]   ,
+['Course', 'rejected', '=', 0]   
     ]);
 });
-
+listview.page.add_inner_button("Rejected", function() {
+            listview.filter_area.clear();
+    const current_user = frappe.session.user;
+current_filter_mode = "completed"; 
+    listview.filter_area.add([
+        ['Course', 'facilitator_email', '=', current_user],
+['Course', 'rejected', '=', 1]   
+    ]);
+});
   listview.page.add_inner_button("Tentative", function() {
             listview.filter_area.clear();
     const current_user = frappe.session.user;
 
     listview.filter_area.add([
         ['Course', 'facilitator_email', '=', current_user],
-['Course', 'course_status', 'in', ['Tentative', 'Confirmed', 'Postpond']] 
+['Course', 'course_status', 'in', ['Tentative', 'Confirmed', 'Postpond']]   ,
+['Course', 'rejected', '=', 0]   
     ]);
 });
     

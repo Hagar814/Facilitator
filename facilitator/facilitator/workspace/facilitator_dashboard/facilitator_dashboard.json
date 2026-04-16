@@ -5,7 +5,7 @@
    "label": "Course"
   }
  ],
- "content": "[{\"id\":\"mMZKmj9wtL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Facilitator Dashboard</span>\",\"col\":12}},{\"id\":\"T4jdNXQgEU\",\"type\":\"card\",\"data\":{\"card_name\":\"Course\",\"col\":4}},{\"id\":\"2-_CLr68sJ\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Course\",\"col\":12}},{\"id\":\"cXWYz6QTA2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Attendee\",\"col\":4}},{\"id\":\"AJxPWO1uar\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Courses\",\"col\":4}}]",
+ "content": "[{\"id\":\"mMZKmj9wtL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Facilitator Dashboard</span>\",\"col\":12}},{\"id\":\"T4jdNXQgEU\",\"type\":\"card\",\"data\":{\"card_name\":\"Course\",\"col\":6}},{\"id\":\"mOAeOVWbEH\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Report</b></span>\",\"col\":12}},{\"id\":\"GSddbZYu41\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Facilitator Course Details\",\"col\":12}},{\"id\":\"2-_CLr68sJ\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Course\",\"col\":12}},{\"id\":\"cXWYz6QTA2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Attendee\",\"col\":4}},{\"id\":\"AJxPWO1uar\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Courses\",\"col\":4}}]",
  "creation": "2026-04-09 12:57:08.186043",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -42,10 +42,8 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Course",
-   "link_count": 2,
-   "link_type": "DocType",
+   "link_count": 3,
    "onboard": 0,
-   "only_for": "Egypt",
    "type": "Card Break"
   },
   {
@@ -71,8 +69,8 @@
    "type": "Link"
   }
  ],
- "modified": "2026-04-09 15:55:42.971200",
- "modified_by": "Administrator",
+ "modified": "2026-04-15 13:25:36.895501",
+ "modified_by": "h.xsolutions123@gmail.com",
  "module": "Facilitator",
  "name": "Facilitator Dashboard",
  "number_cards": [
@@ -98,6 +96,14 @@
   }
  ],
  "sequence_id": 6.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Facilitator Course Details",
+   "link_to": "Facilitator Course Details",
+   "type": "Report"
+  }
+ ],
  "title": "Facilitator Dashboard"
 }
